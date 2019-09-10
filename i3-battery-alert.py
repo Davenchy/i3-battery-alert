@@ -17,7 +17,7 @@ suspend_commands = ["systemctl suspend", "pm-suspend", "pm-hibernate", "pm-suspe
 # for more info visit -> https://www.cyberciti.biz/faq/linux-command-to-suspend-hibernate-laptop-netbook-pc/
 
 notified = False 
-debug = False
+debug = False 
 
 
 def call(cmd):

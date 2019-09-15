@@ -54,7 +54,7 @@ i3-battery-alert
 
 > Using systemd
 
-> Note: You need to make the script [executable](#to-make-the-script-executble) first
+> Note: You need to make the script [executable](#to-make-the-script-executable) first
 
 ```bash
 # copy the service file

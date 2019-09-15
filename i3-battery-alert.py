@@ -1,12 +1,14 @@
-#!/bin/python3
+#!/usr/bin/python3
 from subprocess import Popen, PIPE
 from sys import exit
-import psutil
+from os import path
 from time import sleep
+import psutil
 from playsound import playsound
 
 # CONFIG #
-alert_audio = "alert.mp3" # https://freesound.org/people/SomeAudioGuy/sounds/43866/
+current_path = path.dirname(path.realpath(__file__)) + "/"
+alert_audio = file_loc = current_path + "alert.mp3" # https://freesound.org/people/SomeAudioGuy/sounds/43866/
 high_level = 10
 low_level = 5
 check_every = 10 # in seconds
@@ -17,7 +19,7 @@ suspend_commands = ["systemctl suspend", "pm-suspend", "pm-hibernate", "pm-suspe
 # for more info visit -> https://www.cyberciti.biz/faq/linux-command-to-suspend-hibernate-laptop-netbook-pc/
 
 notified = False 
-debug = False 
+debug = True 
 
 
 def call(cmd):
@@ -37,7 +39,7 @@ while(True):
         if debug: print(f"High Level: {high_level}%, Low Level: {low_level}%, Check Every: {check_every}sec")
         if debug: print(f"Percent: {round(battery.percent, 1)}%")
         if debug: print(f"Is Charging: {battery.power_plugged}")
-        if debug: print(f"Notified: {notified}")
+        if debug: print(f"Next Action Suspend: {notified}")
 
         if battery.power_plugged:
             notified = False

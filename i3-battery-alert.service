@@ -1,0 +1,8 @@
+[Unit]
+Description=I3 Low Level Battery Alert Script
+
+[Service]
+ExecStart=i3-battery-alert
+
+[Install]
+WantedBy=multi-user.target
